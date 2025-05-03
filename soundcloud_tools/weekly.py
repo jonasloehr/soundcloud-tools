@@ -199,8 +199,8 @@ async def create_weekly_favorite_playlist(
     max_duration: int = 600,  # 10 minutes
 ):
     logger.info(f"Creating weekly favorite playlist for {week = } and {types = }")
-    start = get_scheduled_time(Weekday.SUNDAY, weeks=week - 1)
-    end = get_scheduled_time(Weekday.SUNDAY, weeks=week)
+    start = get_scheduled_time(Weekday.SUNDAY, weeks=week - 2)
+    end = get_scheduled_time(Weekday.SUNDAY, weeks=week-1)
     match half:
         case "first":
             end -= (end - start) / 2
